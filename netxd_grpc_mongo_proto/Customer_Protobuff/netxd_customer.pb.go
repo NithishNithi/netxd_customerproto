@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.12.4
-// source: protobuff/netxd_customer.proto
+// source: netxd_grpc_mongo_proto/Customer_Protobuff/netxd_customer.proto
 
-package netxd_customer
+package netxd_grpc_mongo_proto
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -20,6 +20,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+// create
 type CustomerDetails struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -38,7 +39,7 @@ type CustomerDetails struct {
 func (x *CustomerDetails) Reset() {
 	*x = CustomerDetails{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protobuff_netxd_customer_proto_msgTypes[0]
+		mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -51,7 +52,7 @@ func (x *CustomerDetails) String() string {
 func (*CustomerDetails) ProtoMessage() {}
 
 func (x *CustomerDetails) ProtoReflect() protoreflect.Message {
-	mi := &file_protobuff_netxd_customer_proto_msgTypes[0]
+	mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -64,7 +65,7 @@ func (x *CustomerDetails) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomerDetails.ProtoReflect.Descriptor instead.
 func (*CustomerDetails) Descriptor() ([]byte, []int) {
-	return file_protobuff_netxd_customer_proto_rawDescGZIP(), []int{0}
+	return file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CustomerDetails) GetCustomerId() int32 {
@@ -135,7 +136,7 @@ type CustomerResponse struct {
 func (x *CustomerResponse) Reset() {
 	*x = CustomerResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protobuff_netxd_customer_proto_msgTypes[1]
+		mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -148,7 +149,7 @@ func (x *CustomerResponse) String() string {
 func (*CustomerResponse) ProtoMessage() {}
 
 func (x *CustomerResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protobuff_netxd_customer_proto_msgTypes[1]
+	mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -161,7 +162,7 @@ func (x *CustomerResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CustomerResponse.ProtoReflect.Descriptor instead.
 func (*CustomerResponse) Descriptor() ([]byte, []int) {
-	return file_protobuff_netxd_customer_proto_rawDescGZIP(), []int{1}
+	return file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CustomerResponse) GetCustomerId() int32 {
@@ -178,10 +179,146 @@ func (x *CustomerResponse) GetCreatedAt() string {
 	return ""
 }
 
-var File_protobuff_netxd_customer_proto protoreflect.FileDescriptor
+type UpdateBalance struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
 
-var file_protobuff_netxd_customer_proto_rawDesc = []byte{
-	0x0a, 0x1e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x66, 0x2f, 0x6e, 0x65, 0x74, 0x78,
+	From_CustomerId  int32   `protobuf:"varint,1,opt,name=From_CustomerId,json=FromCustomerId,proto3" json:"From_CustomerId,omitempty"`
+	To_CustomerId    int32   `protobuf:"varint,2,opt,name=To_CustomerId,json=ToCustomerId,proto3" json:"To_CustomerId,omitempty"`
+	Amount           float32 `protobuf:"fixed32,3,opt,name=Amount,proto3" json:"Amount,omitempty"`
+	Transaction_Time string  `protobuf:"bytes,4,opt,name=Transaction_Time,json=TransactionTime,proto3" json:"Transaction_Time,omitempty"`
+}
+
+func (x *UpdateBalance) Reset() {
+	*x = UpdateBalance{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateBalance) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateBalance) ProtoMessage() {}
+
+func (x *UpdateBalance) ProtoReflect() protoreflect.Message {
+	mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateBalance.ProtoReflect.Descriptor instead.
+func (*UpdateBalance) Descriptor() ([]byte, []int) {
+	return file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *UpdateBalance) GetFrom_CustomerId() int32 {
+	if x != nil {
+		return x.From_CustomerId
+	}
+	return 0
+}
+
+func (x *UpdateBalance) GetTo_CustomerId() int32 {
+	if x != nil {
+		return x.To_CustomerId
+	}
+	return 0
+}
+
+func (x *UpdateBalance) GetAmount() float32 {
+	if x != nil {
+		return x.Amount
+	}
+	return 0
+}
+
+func (x *UpdateBalance) GetTransaction_Time() string {
+	if x != nil {
+		return x.Transaction_Time
+	}
+	return ""
+}
+
+type UpdateResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	From_CustomerId_Balance float32 `protobuf:"fixed32,1,opt,name=From_CustomerId_Balance,json=FromCustomerIdBalance,proto3" json:"From_CustomerId_Balance,omitempty"`
+	To_CustomerId_Balance   float32 `protobuf:"fixed32,2,opt,name=To_CustomerId_Balance,json=ToCustomerIdBalance,proto3" json:"To_CustomerId_Balance,omitempty"`
+	Transaction_Time        string  `protobuf:"bytes,3,opt,name=Transaction_Time,json=TransactionTime,proto3" json:"Transaction_Time,omitempty"`
+}
+
+func (x *UpdateResponse) Reset() {
+	*x = UpdateResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UpdateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UpdateResponse) ProtoMessage() {}
+
+func (x *UpdateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UpdateResponse.ProtoReflect.Descriptor instead.
+func (*UpdateResponse) Descriptor() ([]byte, []int) {
+	return file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *UpdateResponse) GetFrom_CustomerId_Balance() float32 {
+	if x != nil {
+		return x.From_CustomerId_Balance
+	}
+	return 0
+}
+
+func (x *UpdateResponse) GetTo_CustomerId_Balance() float32 {
+	if x != nil {
+		return x.To_CustomerId_Balance
+	}
+	return 0
+}
+
+func (x *UpdateResponse) GetTransaction_Time() string {
+	if x != nil {
+		return x.Transaction_Time
+	}
+	return ""
+}
+
+var File_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto protoreflect.FileDescriptor
+
+var file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDesc = []byte{
+	0x0a, 0x3e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x5f, 0x6d, 0x6f, 0x6e,
+	0x67, 0x6f, 0x5f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
+	0x72, 0x5f, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x66, 0x2f, 0x6e, 0x65, 0x74, 0x78,
 	0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
 	0x12, 0x0e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
 	0x22, 0xf5, 0x01, 0x0a, 0x0f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x44, 0x65, 0x74,
@@ -204,53 +341,83 @@ var file_protobuff_netxd_customer_proto_rawDesc = []byte{
 	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05,
 	0x52, 0x0a, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1c, 0x0a, 0x09,
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x32, 0x66, 0x0a, 0x0f, 0x43, 0x75,
-	0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x53, 0x0a,
-	0x0e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x12,
-	0x1f, 0x2e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
-	0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73,
-	0x1a, 0x20, 0x2e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
-	0x72, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x42, 0x28, 0x5a, 0x26, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
+	0x09, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x64, 0x41, 0x74, 0x22, 0xa0, 0x01, 0x0a, 0x0d, 0x55,
+	0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x27, 0x0a, 0x0f,
+	0x46, 0x72, 0x6f, 0x6d, 0x5f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0e, 0x46, 0x72, 0x6f, 0x6d, 0x43, 0x75, 0x73, 0x74, 0x6f,
+	0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x23, 0x0a, 0x0d, 0x54, 0x6f, 0x5f, 0x43, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0c, 0x54, 0x6f,
+	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x41, 0x6d,
+	0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x02, 0x52, 0x06, 0x41, 0x6d, 0x6f, 0x75,
+	0x6e, 0x74, 0x12, 0x29, 0x0a, 0x10, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x54, 0x69, 0x6d, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x54, 0x72,
+	0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x69, 0x6d, 0x65, 0x22, 0xa7, 0x01,
+	0x0a, 0x0e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x36, 0x0a, 0x17, 0x46, 0x72, 0x6f, 0x6d, 0x5f, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65,
+	0x72, 0x49, 0x64, 0x5f, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x02, 0x52, 0x15, 0x46, 0x72, 0x6f, 0x6d, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49,
+	0x64, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x32, 0x0a, 0x15, 0x54, 0x6f, 0x5f, 0x43,
+	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x5f, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63,
+	0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x13, 0x54, 0x6f, 0x43, 0x75, 0x73, 0x74, 0x6f,
+	0x6d, 0x65, 0x72, 0x49, 0x64, 0x42, 0x61, 0x6c, 0x61, 0x6e, 0x63, 0x65, 0x12, 0x29, 0x0a, 0x10,
+	0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x54, 0x69, 0x6d, 0x65,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0f, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x54, 0x69, 0x6d, 0x65, 0x32, 0xb8, 0x01, 0x0a, 0x0f, 0x43, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x65, 0x72, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x53, 0x0a, 0x0e, 0x43,
+	0x72, 0x65, 0x61, 0x74, 0x65, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x12, 0x1f, 0x2e,
+	0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x2e, 0x43,
+	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x73, 0x1a, 0x20,
+	0x2e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x2e,
+	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x50, 0x0a, 0x0f, 0x6d, 0x61, 0x6b, 0x65, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x61, 0x63, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x1d, 0x2e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x65, 0x72, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x42, 0x61, 0x6c, 0x61, 0x6e,
+	0x63, 0x65, 0x1a, 0x1e, 0x2e, 0x6e, 0x65, 0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f,
+	0x6d, 0x65, 0x72, 0x2e, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x42, 0x30, 0x5a, 0x2e, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d,
 	0x2f, 0x4e, 0x69, 0x74, 0x68, 0x69, 0x73, 0x68, 0x4e, 0x69, 0x74, 0x68, 0x69, 0x2f, 0x6e, 0x65,
-	0x74, 0x78, 0x64, 0x5f, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x74, 0x78, 0x64, 0x5f, 0x67, 0x72, 0x70, 0x63, 0x5f, 0x6d, 0x6f, 0x6e, 0x67, 0x6f, 0x5f, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_protobuff_netxd_customer_proto_rawDescOnce sync.Once
-	file_protobuff_netxd_customer_proto_rawDescData = file_protobuff_netxd_customer_proto_rawDesc
+	file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescOnce sync.Once
+	file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescData = file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDesc
 )
 
-func file_protobuff_netxd_customer_proto_rawDescGZIP() []byte {
-	file_protobuff_netxd_customer_proto_rawDescOnce.Do(func() {
-		file_protobuff_netxd_customer_proto_rawDescData = protoimpl.X.CompressGZIP(file_protobuff_netxd_customer_proto_rawDescData)
+func file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescGZIP() []byte {
+	file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescOnce.Do(func() {
+		file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescData = protoimpl.X.CompressGZIP(file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescData)
 	})
-	return file_protobuff_netxd_customer_proto_rawDescData
+	return file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDescData
 }
 
-var file_protobuff_netxd_customer_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_protobuff_netxd_customer_proto_goTypes = []interface{}{
+var file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_goTypes = []interface{}{
 	(*CustomerDetails)(nil),  // 0: netxd_customer.CustomerDetails
 	(*CustomerResponse)(nil), // 1: netxd_customer.CustomerResponse
+	(*UpdateBalance)(nil),    // 2: netxd_customer.UpdateBalance
+	(*UpdateResponse)(nil),   // 3: netxd_customer.UpdateResponse
 }
-var file_protobuff_netxd_customer_proto_depIdxs = []int32{
+var file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_depIdxs = []int32{
 	0, // 0: netxd_customer.CustomerService.CreateCustomer:input_type -> netxd_customer.CustomerDetails
-	1, // 1: netxd_customer.CustomerService.CreateCustomer:output_type -> netxd_customer.CustomerResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: netxd_customer.CustomerService.makeTransaction:input_type -> netxd_customer.UpdateBalance
+	1, // 2: netxd_customer.CustomerService.CreateCustomer:output_type -> netxd_customer.CustomerResponse
+	3, // 3: netxd_customer.CustomerService.makeTransaction:output_type -> netxd_customer.UpdateResponse
+	2, // [2:4] is the sub-list for method output_type
+	0, // [0:2] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_protobuff_netxd_customer_proto_init() }
-func file_protobuff_netxd_customer_proto_init() {
-	if File_protobuff_netxd_customer_proto != nil {
+func init() { file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_init() }
+func file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_init() {
+	if File_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_protobuff_netxd_customer_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomerDetails); i {
 			case 0:
 				return &v.state
@@ -262,8 +429,32 @@ func file_protobuff_netxd_customer_proto_init() {
 				return nil
 			}
 		}
-		file_protobuff_netxd_customer_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CustomerResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateBalance); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UpdateResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -279,18 +470,18 @@ func file_protobuff_netxd_customer_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_protobuff_netxd_customer_proto_rawDesc,
+			RawDescriptor: file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_protobuff_netxd_customer_proto_goTypes,
-		DependencyIndexes: file_protobuff_netxd_customer_proto_depIdxs,
-		MessageInfos:      file_protobuff_netxd_customer_proto_msgTypes,
+		GoTypes:           file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_goTypes,
+		DependencyIndexes: file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_depIdxs,
+		MessageInfos:      file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_msgTypes,
 	}.Build()
-	File_protobuff_netxd_customer_proto = out.File
-	file_protobuff_netxd_customer_proto_rawDesc = nil
-	file_protobuff_netxd_customer_proto_goTypes = nil
-	file_protobuff_netxd_customer_proto_depIdxs = nil
+	File_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto = out.File
+	file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_rawDesc = nil
+	file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_goTypes = nil
+	file_netxd_grpc_mongo_proto_Customer_Protobuff_netxd_customer_proto_depIdxs = nil
 }

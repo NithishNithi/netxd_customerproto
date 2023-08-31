@@ -30,6 +30,12 @@ message CustomerResponse {
 message UpdateBalance {
     int32 From_CustomerId = 1;
     int32 To_CustomerId = 2;
+    float Amount = 3;
+    string Transaction_Time = 4;
+
 }
 message UpdateResponse {
+    float From_CustomerId_Balance = 1;
+    float To_CustomerId_Balance = 2;
+    string Transaction_Time = 3;
 }
