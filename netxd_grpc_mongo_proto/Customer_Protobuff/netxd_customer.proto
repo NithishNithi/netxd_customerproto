@@ -35,7 +35,7 @@ message UpdateBalance {
 
 }
 message UpdateResponse {
-    float From_CustomerId_Balance = 1;
-    float To_CustomerId_Balance = 2;
+    float From_CustomerId = 1;
+    float To_CustomerId = 2;
     string Transaction_Time = 3;
 }
